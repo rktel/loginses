@@ -1,0 +1,32 @@
+{
+    "private": {
+        "HYPER_USER": "nkto",
+        "HYPER_USER_PASSWORD": "Alteraz84",
+        "HYPER_PERSONAL_FIRSTNAME": "Ricardo J.",
+        "HYPER_PERSONAL_LASTNAME": "Hernández Oré",
+        "HYPER_PERSONAL_ROLE": "Hyperadmin" 
+    },
+    "public": {
+        "roles": [
+            "Superadmin",
+            "Operaciones",
+            "Almacen",
+            "Tecnico"
+        ],
+        "equipments":[
+            "Grabador",
+            "Camara",
+            "Panel de alarma",
+            "Computadora",
+            "UPS",
+            "Antena",
+            "Comunicador (GPRS)",
+            "Tarjeta SIMCARD(chip)"
+        ],
+        "equipmentStatus":[
+            "Stock",
+            "Instalado",
+            "Retirado"
+        ]
+    }
+}

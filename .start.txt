@@ -1,0 +1,1 @@
+meteor --port 2020 --settings settings.json

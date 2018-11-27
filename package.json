@@ -1,0 +1,17 @@
+{
+  "name": "ses",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "@babel/runtime": "7.0.0-beta.55",
+    "bcrypt": "^3.0.0",
+    "meteor-node-stubs": "^0.4.1",
+    "vue": "^2.5.17",
+    "vue-meteor-tracker": "git+https://github.com/moslemir/vue-meteor-tracker.git",
+    "vue-router": "^3.0.1",
+    "vuetify": "^1.2.3",
+    "vuex": "^3.0.1"
+  }
+}

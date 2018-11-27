@@ -1,0 +1,23 @@
+
+C:\Program Files\MongoDB\Server\4.0\bin>
+
+mongod --port 27018 --dbpath C:\replicaDB\ses0-0 --replSet ses0 --smallfiles --oplogSize 128 
+mongod --port 27019 --dbpath C:\replicaDB\ses0-1 --replSet ses0 --smallfiles --oplogSize 128
+mongod --port 27020 --dbpath C:\replicaDB\ses0-2 --replSet ses0 --smallfiles --oplogSize 128
+
+mongo localhost:27018
+
+config = {_id: 'ses0', members: [{_id: 0, host: 'localhost:27018'}, {_id: 1, host: 'localhost:27019'}, {_id: 2, host: 'localhost:27020'}]}
+rs.initiate(config)
+use admin
+db.createUser({user:'oplogger', pwd:'NATSU2018',roles:[{role: 'read', db: 'local'}]})
+
+"MONGO_URL=mongodb://localhost:27018/ses"
+"MONGO_OPLOG_URL=mongodb://oplogger:NATSU2018@localhost:27018,localhost:27019,localhost:27020/local?authSource=admin&replicaSet=ses0"
+
+
+C:\Users\adminopera\NodeJS\Meteor\ses>SET "MONGO_URL=mongodb://localhost:27018/ses"
+
+C:\Users\adminopera\NodeJS\Meteor\ses>SET "MONGO_OPLOG_URL=mongodb://oplogger:NATSU2018@localhost:27018,localhost:27019,localhost:27020/local?authSource=admin&replicaSet=ses0"
+
+C:\Users\adminopera\NodeJS\Meteor\ses>meteor --port 2020 --settings settings.json
